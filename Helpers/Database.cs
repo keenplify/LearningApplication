@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Microsoft.Data.Sql;
-using Microsoft.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace LearningApplication.Helpers
 {
     public class Database
     {
-        public static SqlConnection Connect()
+        public static MySqlConnection Connect()
         {
             try
             {
-                SqlConnection Connection = new SqlConnection
+                MySqlConnection Connection = new MySqlConnection
                 {
                     ConnectionString =
                     "server=" + Helpers.Connection.HOSTNAME +
@@ -25,7 +24,7 @@ namespace LearningApplication.Helpers
 
                 return Connection;
             }
-            catch (SqlException ex)
+            catch (MySqlException ex)
             {
                 throw ex;
             }
