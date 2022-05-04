@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace LearningApplication.Helpers
+{
+    public class Connection
+    {
+        public static string USERNAME = "root";
+        public static string PASSWORD = "*8*S5Kz2drNc";
+        public static string DATABASE = "learning_application_db";
+        public static string HOSTNAME = "127.0.0.1";
+    }
+}
