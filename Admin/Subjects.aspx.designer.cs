@@ -7,47 +7,47 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LearningApplication
+namespace LearningApplication.Admin
 {
 
 
-    public partial class SiteMaster
+    public partial class Subjects
     {
 
         /// <summary>
-        /// UserFullName control.
+        /// AddSubjectPnl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label UserFullName;
+        protected global::System.Web.UI.WebControls.Panel AddSubjectPnl;
 
         /// <summary>
-        /// LogoutPnl control.
+        /// title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel LogoutPnl;
+        protected global::System.Web.UI.WebControls.TextBox title;
 
         /// <summary>
-        /// LogoutBtn control.
+        /// SubjectDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LogoutBtn;
+        protected global::System.Web.UI.WebControls.TextBox SubjectDescription;
 
         /// <summary>
-        /// MainContent control.
+        /// AddSubjectBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Button AddSubjectBtn;
     }
 }

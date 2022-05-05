@@ -23,7 +23,6 @@ namespace LearningApplication.Helpers
             MySqlCommand cmd = new MySqlCommand(query, Connection);
 
             MySqlDataReader reader = cmd.ExecuteReader();
-            System.Diagnostics.Debug.WriteLine(reader.HasRows);
 
             if (reader.HasRows != true) throw new InvalidOperationException("No user found!");
 
@@ -41,8 +40,8 @@ namespace LearningApplication.Helpers
                 Cookie.StoreInCookieDictionary("user", null, userdata, null);
                 if (redirect)
                 {
-                    if (reader.GetString(reader.GetOrdinal("is_admin")) == "1") HttpContext.Current.Response.Redirect("~/AdminDashboard");
-                    else HttpContext.Current.Response.Redirect("~/UserDashboard");
+                    if (reader.GetBoolean("is_admin")) HttpContext.Current.Response.Redirect("~/Admin/");
+                    else HttpContext.Current.Response.Redirect("~/User/");
                 }
                 return reader;
             }
@@ -70,16 +69,15 @@ namespace LearningApplication.Helpers
                     "'" + email + "'," +
                     "'" + passwordHash + "'" +
                     ");";
-                System.Diagnostics.Debug.WriteLine(query);
                 MySqlConnection Connection = Database.Connect();
                 MySqlCommand cmd = new MySqlCommand(query, Connection);
 
                 cmd.ExecuteNonQuery();
-                HttpContext.Current.Response.Redirect("~/UserLoginForm");
+                HttpContext.Current.Response.Redirect("~/Login");
             }
-            catch
+            catch (MySqlException err)
             {
-                System.Diagnostics.Debug.WriteLine("Something went wrong while trying to add a user.");
+                throw err;
             }
         }
         public static Dictionary<string, object> AutomaticLoginUserLogic(string _type = "", bool redirect = false, bool returnReader = false)
@@ -92,14 +90,7 @@ namespace LearningApplication.Helpers
 
                     if (reader == null) return null;
 
-                    string type = reader.GetString(reader.GetOrdinal("is_admin"));
-                    if (type == "") return null;
-
-                    if (_type != "" && type != _type)
-                    {
-                        throw new InvalidOperationException();
-                    }
-
+                    bool type = reader.GetBoolean("is_admin");
 
                     if (returnReader)
                     {
@@ -114,8 +105,8 @@ namespace LearningApplication.Helpers
 
                     if (redirect)
                     {
-                        if (type == "1") HttpContext.Current.Response.Redirect("~/AdminDashboard");
-                        else HttpContext.Current.Response.Redirect("~/UserDashboard");
+                        if (type) HttpContext.Current.Response.Redirect("~/Admin/");
+                        else HttpContext.Current.Response.Redirect("~/User/");
                     }
                 }
                 catch (InvalidOperationException)
