@@ -50,7 +50,19 @@ namespace LearningApplication.Admin
 
         protected void ChangeImageBtn_Click(object sender, EventArgs e)
         {
-            string folder = Server.MapPath("Uploads/");
+            string absoluteFolder = Server.MapPath("~/Uploads/");
+            string fileName = "subject-" + new Random().Next(0,100000) + '-' + Path.GetFileName(image.PostedFile.FileName);
+
+            if (image.HasFile)
+            {
+                image.PostedFile.SaveAs(absoluteFolder + fileName);
+
+                MySqlConnection connection = Helpers.Database.Connect();
+                string query = "UPDATE subjects_tbl SET logo_src='\\Uploads" + fileName.Replace(@"\", @"\\") + "' WHERE subject_uuid='" + subject_uuid + "'";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                Response.Redirect(Request.Url.PathAndQuery, true);
+            }
         }
     }
 }

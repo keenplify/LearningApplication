@@ -49,7 +49,7 @@
     <div class="container">
         <div class="card-columns">
             <% foreach( var subject in subjects ) { %>
-                <a href="./SubjectViewer?subject_uuid=<%= subject["subject_uuid"] %>" class="card">
+                <a href="./SubjectViewer?subject_uuid=<%= subject["subject_uuid"] %>" class="card shadow">
                     <img class="card-img-top" src="<%= subject["logo_src"] != DBNull.Value ? subject["logo_src"] : "/Images/question.png"   %>" />
                     <div class="card-body text-center">
                         <h6 class="card-title"><%=subject["title"] %></h6>
