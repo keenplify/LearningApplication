@@ -80,9 +80,9 @@ namespace LearningApplication.Helpers
                 throw err;
             }
         }
-        public static Dictionary<string, object> AutomaticLoginUserLogic(string _type = "", bool redirect = false, bool returnReader = false)
+        public static Dictionary<string, object> AutomaticLoginUserLogic(bool redirect = false, bool returnReader = false)
         {
-            if (Cookie.CookieExist("user", "email") && Cookie.CookieExist("user", "password"))
+            if (Cookie.CookieExist("user", "username") && Cookie.CookieExist("user", "password"))
             {
                 try
                 {

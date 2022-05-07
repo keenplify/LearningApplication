@@ -64,7 +64,7 @@
                         {  %>
                     <% //Menu for non admin %>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Non admin</a>
+                        <a class="nav-link" href="/User/Subjects">Subjects</a>
                     </li>
                     <%}
                         else
