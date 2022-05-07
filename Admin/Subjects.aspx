@@ -1,6 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" Title="Subjects Viewer" MasterPageFile="~/Site.Master" CodeBehind="Subjects.aspx.cs" Inherits="LearningApplication.Admin.Subjects" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Subjects</li>
+      </ol>
+    </nav>
     <div class="d-flex mt-3">
         <h1>Subjects</h1>
         <div class="ml-auto">

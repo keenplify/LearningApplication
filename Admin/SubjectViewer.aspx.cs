@@ -13,6 +13,8 @@ namespace LearningApplication.Admin
     {
         protected string subject_uuid;
         protected Dictionary<string, object> subject;
+        protected List<Dictionary<string, object>> topics = new List<Dictionary<string, object>>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             subject_uuid = Request.QueryString["subject_uuid"];
@@ -29,6 +31,22 @@ namespace LearningApplication.Admin
                 {
                     subject.Add(reader.GetName(lp), reader.GetValue(lp));
                 }
+            }
+            connection.Close();
+
+            string topicsQuery = $"SELECT * FROM topics_tbl WHERE subject_uuid='{subject_uuid}'";
+            var topicsConnection = Helpers.Database.Connect();
+            var topicsCmd = new MySqlCommand(topicsQuery, topicsConnection);
+            var topicsReader = topicsCmd.ExecuteReader();
+            if (topicsReader.HasRows != true) return;
+            while (topicsReader.Read())
+            {
+                var topic = new Dictionary<string, object>();
+                for (int lp = 0; lp < topicsReader.FieldCount; lp++)
+                {
+                    topic.Add(topicsReader.GetName(lp), topicsReader.GetValue(lp));
+                }
+                topics.Add(topic);
             }
 
             if (!IsPostBack)
@@ -59,6 +77,34 @@ namespace LearningApplication.Admin
 
                 MySqlConnection connection = Helpers.Database.Connect();
                 string query = "UPDATE subjects_tbl SET logo_src='\\Uploads" + fileName.Replace(@"\", @"\\") + "' WHERE subject_uuid='" + subject_uuid + "'";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                Response.Redirect(Request.Url.PathAndQuery, true);
+            }
+        }
+
+        protected void AddTopicBtn_Click(object sender, EventArgs e)
+        {
+            string absoluteFolder = Server.MapPath("~/Uploads/");
+            string fileName = "topic-" + new Random().Next(0, 100000) + '-' + Path.GetFileName(TopicImageUpl.PostedFile.FileName);
+
+            if (TopicImageUpl.HasFile)
+            {
+                TopicImageUpl.PostedFile.SaveAs(absoluteFolder + fileName);
+                var safeFileName = fileName.Replace(@"\", @"\\");
+
+                MySqlConnection connection = Helpers.Database.Connect();
+                string query = $"INSERT INTO topics_tbl (" +
+                    $"title, " +
+                    $"description, " +
+                    $"logo_src, " +
+                    $"subject_uuid" +
+                    $") VALUES (" +
+                    $"'{TopicTitleTbx.Text}'," +
+                    $"'{MySqlHelper.EscapeString(TopicDescriptionTbx.Text)}'," +
+                    $"'\\Uploads{safeFileName}'," +
+                    $"'{subject_uuid}'" +
+                    $")";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 Response.Redirect(Request.Url.PathAndQuery, true);

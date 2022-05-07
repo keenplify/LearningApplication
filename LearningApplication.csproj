@@ -250,6 +250,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\TopicViewer.aspx" />
     <Content Include="Admin\SubjectViewer.aspx" />
     <Content Include="Admin\Subjects.aspx" />
     <Content Include="Admin\Default.aspx" />
@@ -394,6 +395,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\TopicViewer.aspx.cs">
+      <DependentUpon>TopicViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TopicViewer.aspx.designer.cs">
+      <DependentUpon>TopicViewer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\SubjectViewer.aspx.cs">
       <DependentUpon>SubjectViewer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

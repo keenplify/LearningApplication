@@ -5,7 +5,14 @@
   
     <% if (subject != null)
         { %>
-    <div class="card shadow-lg">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/Admin/Subjects">Subjects</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><%=subject["title"] %></li>
+      </ol>
+    </nav>
+    <div class="card shadow my-3">
         <div class="card-body position-relative">
             <div class="row">
                 <div class="col-md-3">
@@ -77,7 +84,7 @@
                   <asp:Panel runat="server" ID="ChangeImagePnl" DefaultButton="ChangeImageBtn" ValidateRequestMode="Disabled">
                     <div class="modal-body">
                         <div class="form-group">
-                            <label class="form-label">Subject Title</label>
+                            <label class="form-label">Subject Image</label>
                             <asp:FileUpload runat="server" ID="image" CssClass="form-control"/>
                         </div>
                     </div>
@@ -90,6 +97,81 @@
               </div>
             </div>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="d-md-flex">
+                <h2>Subject Topics</h2>
+                <div class="ml-auto">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTopicModal">
+                      Add Topic
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="addTopicModal" tabindex="-1" role="dialog" aria-labelledby="addTopicModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="addTopicModalLabel">Add Topic</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <asp:Panel runat="server" ID="AddTopicPnl" DefaultButton="AddTopicBtn" ValidateRequestMode="Disabled">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label class="form-label">Topic Image</label>
+                                    <asp:FileUpload runat="server" ID="TopicImageUpl" CssClass="form-control"/>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Topic Title</label>
+                                    <asp:TextBox runat="server" ID="TopicTitleTbx" CssClass="form-control"/>
+                                </div>
+                                <div calss="form-group">
+                                    <label class="form-label">Topic Description</label>
+                                    <asp:TextBox runat="server" TextMode="MultiLine" ID="TopicDescriptionTbx" CausesValidation="false">
+                                    </asp:TextBox>
+                                    <script defer>
+                                        tinymce.init({
+                                            selector: 'textarea#MainContent_TopicDescriptionTbx'
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <asp:Button runat="server" ID="AddTopicBtn" OnClick="AddTopicBtn_Click" Text="Submit" CssClass="btn btn-success"/>
+                            </div>
+                          </asp:Panel>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>Image</td>
+                        <td>Title</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% foreach (var topic in topics)
+                        { %>
+                    <tr>
+                        <td> <img class="img-fluid" style="max-width: 10rem;" src="<%= topic["logo_src"] != DBNull.Value ? topic["logo_src"] : "/Images/question.png"   %>" /></td>
+                        <td><%=topic["title"] %></td>
+                        <td>
+                            <a href="TopicViewer?topic_uuid=<%=topic["topic_uuid"] %>" class="btn btn-primary">View</a>
+                        </td>
+                    </tr>
+                    <%} %>
+                </tbody>
+            </table>
+        </div> 
     </div>
     <% }
         else

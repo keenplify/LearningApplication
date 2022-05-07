@@ -11,17 +11,17 @@ namespace LearningApplication.Admin
 {
 
 
-    public partial class SubjectViewer
+    public partial class TopicViewer
     {
 
         /// <summary>
-        /// EditSubjectPnl control.
+        /// EditTopicPnl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel EditSubjectPnl;
+        protected global::System.Web.UI.WebControls.Panel EditTopicPnl;
 
         /// <summary>
         /// title control.
@@ -33,22 +33,22 @@ namespace LearningApplication.Admin
         protected global::System.Web.UI.WebControls.TextBox title;
 
         /// <summary>
-        /// SubjectDescription control.
+        /// TopicDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox SubjectDescription;
+        protected global::System.Web.UI.WebControls.TextBox TopicDescription;
 
         /// <summary>
-        /// EditSubjectBtn control.
+        /// EditTopicBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EditSubjectBtn;
+        protected global::System.Web.UI.WebControls.Button EditTopicBtn;
 
         /// <summary>
         /// ChangeImagePnl control.
@@ -76,50 +76,5 @@ namespace LearningApplication.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ChangeImageBtn;
-
-        /// <summary>
-        /// AddTopicPnl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel AddTopicPnl;
-
-        /// <summary>
-        /// TopicImageUpl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload TopicImageUpl;
-
-        /// <summary>
-        /// TopicTitleTbx control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TopicTitleTbx;
-
-        /// <summary>
-        /// TopicDescriptionTbx control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TopicDescriptionTbx;
-
-        /// <summary>
-        /// AddTopicBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddTopicBtn;
     }
 }
