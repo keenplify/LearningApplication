@@ -16,14 +16,7 @@
     <div class="card shadow my-3">
         <div class="card-body position-relative">
             <div class="row">
-                <div class="col">
-                     <img class="w-100" src="<%= topic["logo_src"] != DBNull.Value ? topic["logo_src"] : "/Images/question.png"   %>" />
-                </div>
-                <div class="col">
-                    <h1 class="font-weight-bold"><%=topic["title"] %></h1>
-                    <hr />
-                    <%=topic["description"] %>
-                </div>
+                <img class="w-100" src="<%= topic["logo_src"] != DBNull.Value ? topic["logo_src"] : "/Images/question.png"   %>" />
             </div>
         </div>
         <div class="position-absolute" style="top: 1em; right: 1em;">
@@ -97,6 +90,67 @@
                 </div>
               </div>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <h2><%=topic["title"] %></h2>
+            <%=topic["description"] %>
+            <hr />
+            <div class="d-md-flex">
+                <h2>This Topic's Quizzes</h2>
+                <div class="ml-auto">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addQuizModal">
+                      Add Quiz
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="addQuizModal" tabindex="-1" role="dialog" aria-labelledby="addQuizModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="addQuizModalLabel">Add Quiz</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <asp:Panel runat="server" ID="addQuizPnl" DefaultButton="addQuizBtn" ValidateRequestMode="Disabled">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label class="form-label">Quiz Title</label>
+                                    <asp:TextBox runat="server" ID="TopicTitleTbx" CssClass="form-control"/>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <asp:Button runat="server" ID="AddQuizBtn" Text="Submit" CssClass="btn btn-success" OnClick="AddQuizBtn_Click"/>
+                            </div>
+                          </asp:Panel>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>Title</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% foreach (var quiz in quizzes)
+                        { %>
+                    <tr>
+                        <td><%=quiz["title"] %></td>
+                        <td>
+                            <a href="QuizViewer?quiz_uuid=<%=quiz["quiz_uuid"] %>" class="btn btn-primary">View Quiz</a>
+                        </td>
+                    </tr>
+                    <%} %>
+                </tbody>
+            </table>
         </div>
     </div>
     <% }

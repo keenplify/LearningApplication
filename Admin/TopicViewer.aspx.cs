@@ -13,7 +13,7 @@ namespace LearningApplication.Admin
     {
         protected string topic_uuid;
         protected Dictionary<string, object> topic;
-        // protected List<Dictionary<string, object>> topics = new List<Dictionary<string, object>>();
+        protected List<Dictionary<string, object>> quizzes = new List<Dictionary<string, object>>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -40,6 +40,21 @@ namespace LearningApplication.Admin
                 }
             }
             connection.Close();
+
+            string quizzesQuery = $"SELECT * FROM quizzes_tbl WHERE topic_uuid='{topic_uuid}'";
+            var quizzesConnection = Helpers.Database.Connect();
+            var quizzesCmd = new MySqlCommand(quizzesQuery, quizzesConnection);
+            var quizzesReader = quizzesCmd.ExecuteReader();
+            if (quizzesReader.HasRows != true) return;
+            while (quizzesReader.Read())
+            {
+                var quiz = new Dictionary<string, object>();
+                for (int lp = 0; lp < quizzesReader.FieldCount; lp++)
+                {
+                    quiz.Add(quizzesReader.GetName(lp), quizzesReader.GetValue(lp));
+                }
+                quizzes.Add(quiz);
+            }
 
             if (!IsPostBack)
             {
@@ -73,6 +88,21 @@ namespace LearningApplication.Admin
                 cmd.ExecuteNonQuery();
                 Response.Redirect(Request.Url.PathAndQuery, true);
             }
+        }
+
+        protected void AddQuizBtn_Click(object sender, EventArgs e)
+        {
+            MySqlConnection connection = Helpers.Database.Connect();
+            string query = $"INSERT INTO quizzes_tbl (" +
+                $"title, " +
+                $"topic_uuid" +
+                $") VALUES (" +
+                $"'{TopicTitleTbx.Text}'," +
+                $"'{topic_uuid}'" +
+                $")";
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            cmd.ExecuteNonQuery();
+            Response.Redirect(Request.Url.PathAndQuery, true);
         }
     }
 }

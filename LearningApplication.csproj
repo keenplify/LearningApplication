@@ -250,6 +250,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="User\Default.aspx" />
+    <Content Include="Admin\AddQuizQuestion.aspx" />
+    <Content Include="Admin\DeleteQuestion.aspx" />
+    <Content Include="Admin\QuizViewer.aspx" />
     <Content Include="Admin\TopicViewer.aspx" />
     <Content Include="Admin\SubjectViewer.aspx" />
     <Content Include="Admin\Subjects.aspx" />
@@ -395,6 +399,34 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="User\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddQuizQuestion.aspx.cs">
+      <DependentUpon>AddQuizQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddQuizQuestion.aspx.designer.cs">
+      <DependentUpon>AddQuizQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteQuestion.aspx.cs">
+      <DependentUpon>DeleteQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteQuestion.aspx.designer.cs">
+      <DependentUpon>DeleteQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\QuizViewer.aspx.cs">
+      <DependentUpon>QuizViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\QuizViewer.aspx.designer.cs">
+      <DependentUpon>QuizViewer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\TopicViewer.aspx.cs">
       <DependentUpon>TopicViewer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -424,6 +456,7 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Helpers\Strings.cs" />
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

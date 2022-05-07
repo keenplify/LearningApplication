@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DeleteQuestion.aspx.cs" Inherits="LearningApplication.Admin.DeleteQuestion" %>

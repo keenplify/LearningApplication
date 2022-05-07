@@ -165,7 +165,7 @@
                         <td> <img class="img-fluid" style="max-width: 10rem;" src="<%= topic["logo_src"] != DBNull.Value ? topic["logo_src"] : "/Images/question.png"   %>" /></td>
                         <td><%=topic["title"] %></td>
                         <td>
-                            <a href="TopicViewer?topic_uuid=<%=topic["topic_uuid"] %>" class="btn btn-primary">View</a>
+                            <a href="TopicViewer?topic_uuid=<%=topic["topic_uuid"] %>" class="btn btn-primary">View Topic</a>
                         </td>
                     </tr>
                     <%} %>
