@@ -7,128 +7,137 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LearningApplication.Admin
+namespace LearningApplication
 {
 
 
-    public partial class SubjectViewer
+    public partial class AccountSettings
     {
 
         /// <summary>
-        /// EditSubjectPnl control.
+        /// lblEditUserError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel EditSubjectPnl;
+        protected global::System.Web.UI.WebControls.Label lblEditUserError;
 
         /// <summary>
-        /// title control.
+        /// pnlEditUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox title;
+        protected global::System.Web.UI.WebControls.Panel pnlEditUser;
 
         /// <summary>
-        /// SubjectDescription control.
+        /// fullName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox SubjectDescription;
+        protected global::System.Web.UI.WebControls.TextBox fullName;
 
         /// <summary>
-        /// EditSubjectBtn control.
+        /// email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EditSubjectBtn;
+        protected global::System.Web.UI.WebControls.TextBox email;
 
         /// <summary>
-        /// ChangeImagePnl control.
+        /// btnEditUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel ChangeImagePnl;
+        protected global::System.Web.UI.WebControls.Button btnEditUser;
 
         /// <summary>
-        /// image control.
+        /// lblUsernameError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload image;
+        protected global::System.Web.UI.WebControls.Label lblUsernameError;
 
         /// <summary>
-        /// ChangeImageBtn control.
+        /// pnlEditUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ChangeImageBtn;
+        protected global::System.Web.UI.WebControls.Panel pnlEditUsername;
 
         /// <summary>
-        /// DeleteBtn control.
+        /// username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DeleteBtn;
+        protected global::System.Web.UI.WebControls.TextBox username;
 
         /// <summary>
-        /// AddTopicPnl control.
+        /// btnEditUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel AddTopicPnl;
+        protected global::System.Web.UI.WebControls.Button btnEditUsername;
 
         /// <summary>
-        /// TopicImageUpl control.
+        /// lblPasswordError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload TopicImageUpl;
+        protected global::System.Web.UI.WebControls.Label lblPasswordError;
 
         /// <summary>
-        /// TopicTitleTbx control.
+        /// pnlEditPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TopicTitleTbx;
+        protected global::System.Web.UI.WebControls.Panel pnlEditPassword;
 
         /// <summary>
-        /// TopicDescriptionTbx control.
+        /// newPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TopicDescriptionTbx;
+        protected global::System.Web.UI.WebControls.TextBox newPassword;
 
         /// <summary>
-        /// AddTopicBtn control.
+        /// newPasswordRetype control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddTopicBtn;
+        protected global::System.Web.UI.WebControls.TextBox newPasswordRetype;
+
+        /// <summary>
+        /// btnEditPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditPassword;
     }
 }

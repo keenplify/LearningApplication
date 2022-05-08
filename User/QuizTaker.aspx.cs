@@ -142,7 +142,7 @@ namespace LearningApplication.User
             cmd.ExecuteNonQuery();
             connection.Close();
 
-            Response.Redirect("/User/TopicViewer?topic_id=" + quiz["topic_uuid"], true);
+            Response.Redirect("/User/TopicViewer?topic_uuid=" + quiz["topic_uuid"]+ "#QuizzesTable", true);
         }
     }
 }

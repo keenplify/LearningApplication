@@ -29,6 +29,7 @@ namespace LearningApplication.Admin
             var cmd = new MySqlCommand(query, connection);
             var reader = cmd.ExecuteReader();
             if (reader.HasRows != true) return;
+
             while (reader.Read())
             {
                 topic = new Dictionary<string, object>();
@@ -40,6 +41,12 @@ namespace LearningApplication.Admin
                 }
             }
             connection.Close();
+
+            if (!IsPostBack)
+            {
+                title.Text = topic["title"].ToString();
+                TopicDescription.Text = topic["description"].ToString();
+            }
 
             string quizzesQuery = $"SELECT * FROM quizzes_tbl WHERE topic_uuid='{topic_uuid}'";
             var quizzesConnection = Helpers.Database.Connect();
@@ -56,11 +63,7 @@ namespace LearningApplication.Admin
                 quizzes.Add(quiz);
             }
 
-            if (!IsPostBack)
-            {
-                title.Text = topic["title"].ToString();
-                TopicDescription.Text = topic["description"].ToString();
-            }
+            
         }
 
         protected void EditTopicBtn_Click(object sender, EventArgs e)
@@ -83,7 +86,7 @@ namespace LearningApplication.Admin
                 image.PostedFile.SaveAs(absoluteFolder + fileName);
 
                 MySqlConnection connection = Helpers.Database.Connect();
-                string query = "UPDATE topic_tbl SET logo_src='\\Uploads" + fileName.Replace(@"\", @"\\") + "' WHERE subject_uuid='" + topic_uuid + "'";
+                string query = "UPDATE topics_tbl SET logo_src='/Uploads/" + fileName.Replace(@"\", @"\\") + "' WHERE topic_uuid='" + topic_uuid + "'";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 Response.Redirect(Request.Url.PathAndQuery, true);
@@ -103,6 +106,15 @@ namespace LearningApplication.Admin
             MySqlCommand cmd = new MySqlCommand(query, connection);
             cmd.ExecuteNonQuery();
             Response.Redirect(Request.Url.PathAndQuery, true);
+        }
+
+        protected void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            MySqlConnection connection = Helpers.Database.Connect();
+            string query = $"DELETE FROM topics_tbl WHERE topic_uuid='{topic_uuid}'";
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            cmd.ExecuteNonQuery();
+            Response.Redirect("/Admin/SubjectViewer?subject_uuid="+topic["subject_uuid"], true);
         }
     }
 }

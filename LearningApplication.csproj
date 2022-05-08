@@ -250,6 +250,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AccountSettings.aspx" />
     <Content Include="User\Default.aspx" />
     <Content Include="Admin\AddQuizQuestion.aspx" />
     <Content Include="Admin\DeleteQuestion.aspx" />
@@ -403,6 +404,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountSettings.aspx.cs">
+      <DependentUpon>AccountSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountSettings.aspx.designer.cs">
+      <DependentUpon>AccountSettings.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

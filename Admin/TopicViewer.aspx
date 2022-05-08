@@ -90,6 +90,31 @@
                 </div>
               </div>
             </div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteTopicModal">
+                Delete
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="deleteTopicModal" tabindex="-1" role="dialog" aria-labelledby="deleteTopicModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="deleteTopicModalLabel">Delete This Topic</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                        This will delete this topic. Are you sure to delete this topic?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <asp:Button runat="server" CssClass="btn btn-danger" Text="Delete Subject" ID="DeleteBtn" OnClick="DeleteBtn_Click"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">

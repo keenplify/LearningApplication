@@ -91,7 +91,7 @@ namespace LearningApplication.Admin
             if (TopicImageUpl.HasFile)
             {
                 TopicImageUpl.PostedFile.SaveAs(absoluteFolder + fileName);
-                var safeFileName = fileName.Replace(@"\", @"\\");
+                var safeFileName = ("\\Uploads\\" + fileName).Replace(@"\", @"\\");
 
                 MySqlConnection connection = Helpers.Database.Connect();
                 string query = $"INSERT INTO topics_tbl (" +
@@ -102,13 +102,22 @@ namespace LearningApplication.Admin
                     $") VALUES (" +
                     $"'{TopicTitleTbx.Text}'," +
                     $"'{MySqlHelper.EscapeString(TopicDescriptionTbx.Text)}'," +
-                    $"'\\Uploads{safeFileName}'," +
+                    $"'{safeFileName}'," +
                     $"'{subject_uuid}'" +
                     $")";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 Response.Redirect(Request.Url.PathAndQuery, true);
             }
+        }
+
+        protected void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            MySqlConnection connection = Helpers.Database.Connect();
+            string query = $"DELETE FROM subjects_tbl WHERE subject_uuid='{subject_uuid}'";
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            cmd.ExecuteNonQuery();
+            Response.Redirect("/Admin/Subjects", true);
         }
     }
 }
