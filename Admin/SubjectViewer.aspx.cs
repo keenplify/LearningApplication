@@ -34,6 +34,12 @@ namespace LearningApplication.Admin
             }
             connection.Close();
 
+            if (!IsPostBack)
+            {
+                title.Text = subject["title"].ToString();
+                SubjectDescription.Text = subject["description"].ToString();
+            }
+
             string topicsQuery = $"SELECT * FROM topics_tbl WHERE subject_uuid='{subject_uuid}'";
             var topicsConnection = Helpers.Database.Connect();
             var topicsCmd = new MySqlCommand(topicsQuery, topicsConnection);
@@ -49,11 +55,7 @@ namespace LearningApplication.Admin
                 topics.Add(topic);
             }
 
-            if (!IsPostBack)
-            {
-                title.Text = subject["title"].ToString();
-                SubjectDescription.Text = subject["description"].ToString();
-            }
+            
         }
 
         protected void EditSubjectBtn_Click(object sender, EventArgs e)
@@ -76,7 +78,7 @@ namespace LearningApplication.Admin
                 image.PostedFile.SaveAs(absoluteFolder + fileName);
 
                 MySqlConnection connection = Helpers.Database.Connect();
-                string query = "UPDATE subjects_tbl SET logo_src='\\Uploads" + fileName.Replace(@"\", @"\\") + "' WHERE subject_uuid='" + subject_uuid + "'";
+                string query = "UPDATE subjects_tbl SET logo_src='/Uploads/" + fileName.Replace(@"\", @"\\") + "' WHERE subject_uuid='" + subject_uuid + "'";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 Response.Redirect(Request.Url.PathAndQuery, true);
