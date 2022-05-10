@@ -21,7 +21,9 @@
                 <div class="col-md-9">
                     <h1 class="font-weight-bold"><%=subject["title"] %></h1>
                     <hr />
-                    <%=subject["description"] %>
+                    <div class="tinymcelongtext">
+                        <%=subject["description"] %>
+                    </div>
                 </div>
             </div>
         </div>

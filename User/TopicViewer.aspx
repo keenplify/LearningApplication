@@ -24,7 +24,9 @@
     <div class="row">
         <div class="col-md-10 offset-md-1">
             <h2><%=topic["title"] %></h2>
-            <%=topic["description"] %>
+            <div class="tinymcelongtext">
+                <%=topic["description"] %>
+            </div>
             <hr />
             <div class="d-md-flex">
                 <h2>This Topic's Quizzes</h2>

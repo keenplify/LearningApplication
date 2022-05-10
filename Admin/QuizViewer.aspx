@@ -70,7 +70,9 @@
                 { %>
                 <div class="card my-2 position-relative">
                     <div class="card-header">
-                        <%=question["text"] %>
+                        <div class="tinymcelongtext">
+                            <%=question["text"] %>
+                        </div>
                     </div>
                     <div class="card-body">
                         <% foreach (Dictionary<string, object> choice in (List<Dictionary<string, object>>)question["choices"])
