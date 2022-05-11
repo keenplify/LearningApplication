@@ -6,40 +6,151 @@
         <li class="breadcrumb-item active" aria-current="page">Home</li>
       </ol>
     </nav>
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <div class="row">
+        <div class="col-md-6 d-flex justify-content-center flex-column">
+            <h1>Welcome to <b class="text-success">Learning Application</b></h1>
+            <p>The main objectives of the website are to provide creative learning materials for students, kids and casual user and help them to develop needed and academic skills, to provide as a reviewer for different students and build alternative ways of studying while enjoying your time doing it.</p>
+        </div>
+        <div class="col-md-6">
+            <div class="jumbotron d-flex align-item-center justify-content-center">
+                <img src="Images/logo.png" class="img-responsive"/>
+            </div>
+        </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
+    <h1 class="text-center">Our Team</h1>
+    <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-xs-2 col-sm-6 col-lg-3 d-flex align-items-center justify-content-center">
+            <div class="avatar_container-lg shadow-sm m-2 rounded-circle">
+                <img class="avatar" src="Images/members/haguimit.png" />
+                <div class="badge badge-info">
+                    <span>HAGUIMIT, JOHN PATRICK</span>
+                    <br />
+                    <small>Project Manager</small>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
+        <div class="col-xs-2 col-sm-6 col-lg-3 d-flex align-items-center justify-content-center">
+            <div class="avatar_container-lg shadow-sm m-2 rounded-circle">
+                <img class="avatar" src="Images/members/romero.png" />
+                <div class="badge badge-info">
+                    <span>ROMERO, MARC</span>
+                    <br />
+                    <small>Project Manager</small>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
+    </div>
+    <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-xs-2 col-sm-4 col-lg-3 d-flex align-items-center justify-content-center">
+            <div class="avatar_container shadow-sm rounded-circle">
+                <img class="avatar" src="Images/members/balinas.png" />
+                <div class="badge badge-primary">
+                    <span>BALINAS, JOHN PAUL</span>
+                    <br />
+                    <small>Network Designer</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2 col-sm-4 col-lg-3 d-flex align-items-center justify-content-center">
+            <div class="avatar_container shadow-sm m-2 rounded-circle">
+                <img class="avatar" src="Images/members/casite.png" />
+                <div class="badge badge-primary">
+                    <span>CASITE, JOHN HAROLD</span>
+                    <br />
+                    <small>Researcher</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2 col-sm-4 col-lg-3 d-flex align-items-center justify-content-center">
+            <div class="avatar_container shadow-sm m-2 rounded-circle">
+                <img class="avatar" src="Images/members/castillon.png" />
+                <div class="badge badge-primary">
+                    <span>CASTILLON, JEAN CARLO</span>
+                    <br />
+                    <small>Technical Writer</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2 col-sm-4 col-lg-3 d-flex align-items-center justify-content-center">
+            <div class="avatar_container shadow-sm m-2 rounded-circle">
+                <img class="avatar" src="Images/members/DE_LUIS.png" />
+                <div class="badge badge-primary">
+                    <span>DE LUIS, RAPHAEL</span>
+                    <br />
+                    <small>Network Designer</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2 col-sm-4 col-lg-3 d-flex align-items-center justify-content-center">
+            <div class="avatar_container shadow-sm m-2 rounded-circle">
+                <img class="avatar" src="Images/members/gusto.png" />
+                <div class="badge badge-primary">
+                    <span>GUSTO, GERALD</span>
+                    <br />
+                    <small>Network Designer</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2 col-sm-4 col-lg-3 d-flex align-items-center justify-content-center">
+            <div class="avatar_container shadow-sm m-2 rounded-circle">
+                <img class="avatar" src="Images/members/lazaro.png" />
+                <div class="badge badge-primary">
+                    <span>LAZARO, JAYMAR</span>
+                    <br />
+                    <small>Database Programmer</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2 col-sm-4 col-lg-3 d-flex align-items-center justify-content-center">
+            <div class="avatar_container shadow-sm m-2 rounded-circle">
+                <img class="avatar" src="Images/members/mapagdalita.png" />
+                <div class="badge badge-primary">
+                    <span>MAPAGDALITA, SONPAUL</span>
+                    <br />
+                    <small>Interface Designer</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2 col-sm-4 col-lg-3 d-flex align-items-center justify-content-center">
+            <div class="avatar_container shadow-sm m-2 rounded-circle">
+                <img class="avatar" src="Images/members/miguela.png" />
+                <div class="badge badge-primary">
+                    <span>MIGUELA, ALBERT</span>
+                    <br />
+                    <small>Programmer</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2 col-sm-4 col-lg-3 d-flex align-items-center justify-content-center">
+            <div class="avatar_container shadow-sm m-2 rounded-circle">
+                <img class="avatar" src="Images/members/naquita.png" />
+                <div class="badge badge-primary">
+                    <span>NAQUITA, ANDREW</span>
+                    <br />
+                    <small>Technical Writer</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2 col-sm-4 col-lg-3 d-flex align-items-center justify-content-center">
+            <div class="avatar_container shadow-sm m-2 rounded-circle">
+                <img class="avatar" src="Images/members/narra.png" />
+                <div class="badge badge-primary">
+                    <span>NARRA, ALLAN CLARC</span>
+                    <br />
+                    <small>Programmer</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2 col-sm-4 col-lg-3 d-flex align-items-center justify-content-center">
+            <div class="avatar_container shadow-sm m-2 rounded-circle">
+                <img class="avatar" src="Images/members/soriano.png" />
+                <div class="badge badge-primary">
+                    <span>SORIANO, JOHN MICHAEL</span>
+                    <br />
+                    <small>Researcher</small>
+                </div>
+            </div>
         </div>
     </div>
 

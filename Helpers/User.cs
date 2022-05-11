@@ -40,8 +40,7 @@ namespace LearningApplication.Helpers
                 Cookie.StoreInCookieDictionary("user", null, userdata, null);
                 if (redirect)
                 {
-                    if (reader.GetBoolean("is_admin")) HttpContext.Current.Response.Redirect("~/Admin/");
-                    else HttpContext.Current.Response.Redirect("~/User/");
+                    HttpContext.Current.Response.Redirect("~/");
                 }
                 return reader;
             }
@@ -105,8 +104,7 @@ namespace LearningApplication.Helpers
 
                     if (redirect)
                     {
-                        if (type) HttpContext.Current.Response.Redirect("~/Admin/");
-                        else HttpContext.Current.Response.Redirect("~/User/");
+                        HttpContext.Current.Response.Redirect("~/");
                     }
                 }
                 catch (InvalidOperationException)

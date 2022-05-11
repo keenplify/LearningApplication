@@ -251,14 +251,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AccountSettings.aspx" />
-    <Content Include="User\Default.aspx" />
     <Content Include="Admin\AddQuizQuestion.aspx" />
     <Content Include="Admin\DeleteQuestion.aspx" />
     <Content Include="Admin\QuizViewer.aspx" />
     <Content Include="Admin\TopicViewer.aspx" />
     <Content Include="Admin\SubjectViewer.aspx" />
     <Content Include="Admin\Subjects.aspx" />
-    <Content Include="Admin\Default.aspx" />
     <Content Include="Images\question.png" />
     <Content Include="Register.aspx" />
     <Content Include="Login.aspx" />
@@ -411,13 +409,6 @@
     <Compile Include="AccountSettings.aspx.designer.cs">
       <DependentUpon>AccountSettings.aspx</DependentUpon>
     </Compile>
-    <Compile Include="User\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="User\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\AddQuizQuestion.aspx.cs">
       <DependentUpon>AddQuizQuestion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -459,13 +450,6 @@
     </Compile>
     <Compile Include="Admin\Subjects.aspx.designer.cs">
       <DependentUpon>Subjects.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Helpers\Strings.cs" />

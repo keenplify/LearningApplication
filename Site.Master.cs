@@ -10,7 +10,7 @@ namespace LearningApplication
 {
     public partial class SiteMaster : MasterPage
     {
-        protected string homeHREF = "#";
+        protected string homeHREF = "/";
         public Dictionary<string, object> user = null;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,7 +29,6 @@ namespace LearningApplication
 
                     if (user == null) return;
                     UserFullName.Text = user["full_name"].ToString();
-                    homeHREF = (bool)user["is_admin"] ? "/Admin/" : "/User/";
                 }
                 catch (Exception err)
                 {
