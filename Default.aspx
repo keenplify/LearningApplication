@@ -34,7 +34,7 @@
             <div class="avatar_container-lg shadow-sm m-2 rounded-circle">
                 <img class="avatar" src="Images/members/romero.png" />
                 <div class="badge badge-info">
-                    <span>ROMERO, MARC</span>
+                    <span>ROMERO, MARK ANGELO</span>
                     <br />
                     <small>Project Manager</small>
                 </div>
