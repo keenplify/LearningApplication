@@ -7,11 +7,11 @@
       </ol>
     </nav>
     <div class="row">
-        <div class="col-md-6 d-flex justify-content-center flex-column">
+        <div class="col-md-7 d-flex justify-content-center flex-column">
             <h1>Welcome to <b class="text-success">Learning Application</b></h1>
             <p>The main objectives of the website are to provide creative learning materials for students, kids and casual user and help them to develop needed and academic skills, to provide as a reviewer for different students and build alternative ways of studying while enjoying your time doing it.</p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div class="jumbotron d-flex align-item-center justify-content-center">
                 <img src="Images/logo.png" class="img-responsive"/>
             </div>
